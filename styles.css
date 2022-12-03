@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid red;
+    height: 100vh;
+
+}
+
+.grid-container {
+    border: 2px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 400px;
+    max-height: 400px;
+
+}
+
+
+div {
+    border: 2px solid red;
+}

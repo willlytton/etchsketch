@@ -1,34 +1,28 @@
+const gridContainer = document.querySelector('.grid-container');
+
+
+
 // 16 x 16 div grid
-// O(n)2) quadratic equation SLOOOOOOW if scalled to large numbers
+// O(n)2) quadratic equation SLOOOOOOW if scaled to large numbers
 
-function createGrid() {
-    let n = prompt("Define n size of grid?");
-    for (let i = 0; i < n; i++) {
-         for (let j = 0; j < n; j++) {
-            const gridContainer = document.querySelector(".grid-container");
-            const div = document.createElement('div');
-            gridContainer.append(div);
-            div.textContent = "Mr";
+function createGrid(size) {
+    let n = prompt(`Define ${size} n of grid?`);
+    for (let i = 0; i < n * n; i++) {
+        const gridElement = document.createElement('div');
+        gridElement.classList.add('square');
+        gridElement.addEventListener('mouseover', function(e) {
+            gridElement.style.backgroundColor = 'black'
+            console.log(e);
+        });
+        gridContainer.appendChild(gridElement);
+        gridContainer.style.gridTemplateColumns = `repeat(${n}, 1fr)`;
+        gridContainer.style.gridTemplateRows = `repeat(${n}, 1fr)`;
 
-
-        }
     }
 }
-
 console.log(createGrid());
 
+// function changeCol() {
+//     gridElement.style.backgroundColor = 'black';
+// }
 
-
-
-    // function createGrid() { 
-    //     const grid = [row * col];
-
-    // }
-
-
-
-// O(n(2)) grid create may consider using linear algo to create grid if possible
-
-            // const cell = document.createElement('div');
-            // container.appendChild('div');
-            

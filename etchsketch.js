@@ -8,10 +8,12 @@ let currentSize = DEFAULT_SIZE
 const gridContainer = document.querySelector('.grid-container');
 const resetButton = document.getElementById('reset');
 const colorButton = document.getElementById('color');
-
+const gridValue = document.getElementById('grid-value');
 
 resetButton.addEventListener('click', reset);
 colorButton.addEventListener('click', setColor);
+
+
 
 // 16 x 16 div grid
 // O(n)2) quadratic equation SLOOOOOOW if scaled to large numbers
@@ -31,7 +33,11 @@ function createGrid(n) {
 // had no choice but to use HTML, lol!
 function reset() {
     gridContainer.innerHTML = '';
-    createGrid();
+    createGrid(currentSize);
+}
+
+function setCurrentSize() {
+
 }
 
 // moves color functionality to seperate function so new colors can be add...and for cleaner code
